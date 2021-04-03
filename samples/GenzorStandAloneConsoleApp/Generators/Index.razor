@@ -1,0 +1,23 @@
+<h3>This page is supercool </h3>
+
+@foreach (var name in names)
+{
+  <p>@name</p>
+}
+
+@foreach (var doc in MdDocuments)
+{
+<ul>
+	<li><a href="@doc.OutputFileName">@doc.FilenameWithoutExtension</a> </li>
+</ul>
+}
+
+@code {
+
+
+	[CascadingParameter(Name = "MdDocuments")] public List<Document> MdDocuments { get; set; }
+
+	List<string> names = new List<string> { "John", "Peter", "Bob" };
+
+
+}
