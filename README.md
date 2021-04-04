@@ -53,6 +53,21 @@ The resulted "webpage" is [here](https://tesar-tech.github.io/GenzorStaticSiteGe
 </CascadingValue>
 ```
 
+## Adding static files (css, imgs)
+
+- Add folder to project with same name as the top Directory (`output`).
+  - Place static files inside
+- Add this to csproj to copy the folder in build time
+ 
+    ```xml
+        <ItemGroup>
+            <None Update="output\**\*">
+                <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            </None>
+        </ItemGroup>
+    ```
+
+
 ## Note about my laziness
 
 This project is a full copy of the Genzor project. It uses only part of it (the demo app)

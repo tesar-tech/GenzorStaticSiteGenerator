@@ -8,10 +8,14 @@ namespace GenzorDemo
     {
         private readonly DirectoryInfo rootDirectory;
 
-        public FileSystem(DirectoryInfo rootDirectory) 
-            => this.rootDirectory = rootDirectory ?? throw new ArgumentNullException(nameof(rootDirectory));
+		public FileSystem(DirectoryInfo rootDirectory, string staticFolder = "wwwroot")
+		{
+			this.rootDirectory = rootDirectory ?? throw new ArgumentNullException(nameof(rootDirectory));
+			//var staticRootDirecotry = new DirectoryInfo(rootDirectory.FullName + staticFolder);
+			
+		}
 
-        public void AddItem(IFileSystemItem item)
+		public void AddItem(IFileSystemItem item)
             => AddItem(rootDirectory, item);
 
         private void AddItem(DirectoryInfo parent, IFileSystemItem item)

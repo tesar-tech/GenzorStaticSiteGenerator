@@ -13,7 +13,7 @@
 		{
 			<TextFile Name="@doc.OutputFileName">
 				<Layout>
-				@((MarkupString)Markdown.ToHtml( doc.Content))	
+					@((MarkupString)Markdown.ToHtml( doc.Content))
 				</Layout>
 			</TextFile>
 		}
@@ -31,8 +31,11 @@
 	</Directory>
 </CascadingValue>
 
+
+
 @code
-{
-	[Parameter] public int MyProperty { get; set; }
-	[Parameter] public List<Document> MdDocuments { get; set; }
-}
+	{
+		[Parameter] public int MyProperty { get; set; }
+		[Parameter] public List<Document> MdDocuments { get; set; }
+	}
+
